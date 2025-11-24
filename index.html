@@ -1,1 +1,972 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Наталья Гончарова - Муза Пушкина</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Cormorant Garamond', serif;
+			line-height: 1.7;
+			color: #3e2723;
+			background-color: #f5e9d8;
+			background-image:
+				url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" opacity="0.03"><path d="M0 0h200v200H0z" fill="none"/><path d="M40 40h120v120H40z" stroke="%233e2723" fill="none"/></svg>'),
+				url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.02"><path d="M50,5 L60,40 L95,40 L65,60 L75,95 L50,75 L25,95 L35,60 L5,40 L40,40 Z" fill="%233e2723"/></svg>');
+			background-size: 200px, 100px;
+			position: relative;
+			overflow-x: hidden;
+		}
+
+		body::before {
+			content: "";
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background:
+				radial-gradient(circle at 20% 30%, rgba(120, 80, 60, 0.03) 0%, transparent 50%),
+				radial-gradient(circle at 80% 70%, rgba(120, 80, 60, 0.03) 0%, transparent 50%);
+			pointer-events: none;
+			z-index: -1;
+		}
+
+		.ink-blot {
+			position: fixed;
+			width: 300px;
+			height: 300px;
+			background: radial-gradient(circle, rgba(46, 28, 20, 0.03) 0%, transparent 70%);
+			border-radius: 50%;
+			z-index: -1;
+			opacity: 0;
+			animation: fadeInOut 20s infinite;
+		}
+
+		.ink-blot:nth-child(1) {
+			top: 10%;
+			left: 5%;
+			animation-delay: 0s;
+		}
+
+		.ink-blot:nth-child(2) {
+			top: 60%;
+			right: 10%;
+			animation-delay: 5s;
+		}
+
+		.ink-blot:nth-child(3) {
+			bottom: 20%;
+			left: 15%;
+			animation-delay: 10s;
+		}
+
+		@keyframes fadeInOut {
+
+			0%,
+			100% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+		}
+
+		.page {
+			max-width: 1100px;
+			margin: 0 auto;
+			background-color: #f9f3eb;
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+			position: relative;
+			border: 1px solid #d7ccc8;
+			padding: 2rem;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		.page::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background:
+				linear-gradient(90deg, transparent 98%, rgba(120, 80, 60, 0.1) 100%),
+				linear-gradient(0deg, transparent 98%, rgba(120, 80, 60, 0.1) 100%);
+			pointer-events: none;
+		}
+
+		header {
+			background: linear-gradient(to right, #2c1810, #5d4037);
+			color: #f9f3eb;
+			padding: 3rem 0;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			border-bottom: 8px solid #8d6e63;
+		}
+
+		header::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150" opacity="0.05"><path d="M75,15 C90,15 105,20 115,30 C125,40 130,55 130,70 C130,85 125,100 115,110 C105,120 90,125 75,125 C60,125 45,120 35,110 C25,100 20,85 20,70 C20,55 25,40 35,30 C45,20 60,15 75,15 Z" fill="none" stroke="%23f9f3eb" stroke-width="2"/></svg>');
+			background-size: 150px;
+		}
+
+		.header-content {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 2rem;
+			position: relative;
+			z-index: 1;
+		}
+
+		h1 {
+			font-family: 'Cinzel', serif;
+			font-size: 3.8rem;
+			margin-bottom: 0.5rem;
+			font-weight: 700;
+			letter-spacing: 3px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			position: relative;
+			display: inline-block;
+		}
+
+		h1::after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: 10%;
+			width: 80%;
+			height: 2px;
+			background: linear-gradient(to right, transparent, #d7ccc8, transparent);
+		}
+
+		.subtitle {
+			font-size: 1.5rem;
+			font-style: italic;
+			opacity: 0.9;
+			margin-bottom: 1rem;
+			letter-spacing: 1px;
+		}
+
+		.header-quote {
+			max-width: 700px;
+			margin: 1.5rem auto 0;
+			font-size: 1.2rem;
+			opacity: 0.8;
+			border-top: 1px solid rgba(249, 243, 235, 0.3);
+			padding-top: 1.5rem;
+			position: relative;
+		}
+
+		.header-quote::before,
+		.header-quote::after {
+			content: '"';
+			font-size: 2rem;
+			color: #d7ccc8;
+			position: absolute;
+			top: 10px;
+		}
+
+		.header-quote::before {
+			left: -30px;
+		}
+
+		.header-quote::after {
+			right: -30px;
+		}
+
+		nav {
+			background-color: #3e2723;
+			padding: 1rem 0;
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			border-bottom: 3px solid #8d6e63;
+		}
+
+		.nav-container {
+			max-width: 1100px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		nav a {
+			color: #f9f3eb;
+			text-decoration: none;
+			padding: 0.8rem 2rem;
+			margin: 0.2rem 0.5rem;
+			border-radius: 0;
+			transition: all 0.3s ease;
+			font-family: 'Cinzel', serif;
+			font-size: 1.1rem;
+			position: relative;
+			overflow: hidden;
+			border: 1px solid transparent;
+		}
+
+		nav a::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+			transition: left 0.5s;
+		}
+
+		nav a:hover::before {
+			left: 100%;
+		}
+
+		nav a:hover {
+			background-color: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+		}
+
+		.container {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.hero {
+			margin-bottom: 4rem;
+		}
+
+		.hero-text {
+			padding: 2.5rem;
+			background-color: #fff;
+			border-radius: 2px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+			border-left: 8px solid #8d6e63;
+			position: relative;
+		}
+
+		.hero-text::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" opacity="0.03"><path d="M0 0h20v20H0z" fill="none"/><path d="M5 5h10v10H5z" stroke="%233e2723" fill="none"/></svg>');
+			pointer-events: none;
+		}
+
+		.hero-text h2 {
+			font-family: 'Cinzel', serif;
+			font-size: 2.3rem;
+			margin-bottom: 1.5rem;
+			color: #3e2723;
+			border-bottom: 1px solid #e0d6c8;
+			padding-bottom: 0.8rem;
+			position: relative;
+		}
+
+		.hero-text h2::after {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 50px;
+			height: 3px;
+			background: #8d6e63;
+		}
+
+		section {
+			margin-bottom: 4rem;
+			position: relative;
+		}
+
+		h2 {
+			font-family: 'Cinzel', serif;
+			font-size: 2.6rem;
+			margin-bottom: 2rem;
+			color: #3e2723;
+			text-align: center;
+			position: relative;
+			padding-bottom: 1rem;
+		}
+
+		h2::after {
+			content: '';
+			display: block;
+			width: 150px;
+			height: 3px;
+			background: linear-gradient(to right, transparent, #8d6e63, transparent);
+			margin: 0.8rem auto;
+		}
+
+		.section-intro {
+			text-align: center;
+			max-width: 800px;
+			margin: 0 auto 2.5rem;
+			font-size: 1.3rem;
+			color: #5d4037;
+			position: relative;
+			padding: 0 1rem;
+		}
+
+		.section-intro::before,
+		.section-intro::after {
+			content: "※";
+			color: #8d6e63;
+			opacity: 0.5;
+			position: absolute;
+			top: 0;
+			font-size: 1.5rem;
+		}
+
+		.section-intro::before {
+			left: 0;
+		}
+
+		.section-intro::after {
+			right: 0;
+		}
+
+		.facts-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+			gap: 2rem;
+		}
+
+		.fact-card {
+			background-color: #fff;
+			border-radius: 2px;
+			padding: 2rem;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+			transition: transform 0.3s, box-shadow 0.3s;
+			border-top: 5px solid #8d6e63;
+			position: relative;
+			overflow: hidden;
+			border: 1px solid #e0d6c8;
+		}
+
+		.fact-card::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5px;
+			height: 100%;
+			background: linear-gradient(to bottom, #8d6e63, #3e2723);
+		}
+
+		.fact-card:hover {
+			transform: translateY(-7px);
+			box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+		}
+
+		.fact-card h3 {
+			color: #5d4037;
+			margin-bottom: 1.2rem;
+			font-size: 1.5rem;
+			font-family: 'Cinzel', serif;
+			position: relative;
+			display: inline-block;
+		}
+
+		.fact-card h3::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 30px;
+			height: 2px;
+			background: #8d6e63;
+		}
+
+		.timeline {
+			position: relative;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		.timeline:before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 0;
+			bottom: 0;
+			width: 4px;
+			background: linear-gradient(to bottom, #8d6e63, #3e2723, #8d6e63);
+			transform: translateX(-50%);
+		}
+
+		.timeline-item {
+			margin-bottom: 3rem;
+			position: relative;
+			width: 50%;
+			padding: 0 3rem;
+		}
+
+		.timeline-item:nth-child(odd) {
+			left: 0;
+		}
+
+		.timeline-item:nth-child(even) {
+			left: 50%;
+		}
+
+		.timeline-content {
+			background-color: #fff;
+			padding: 2rem;
+			border-radius: 2px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+			position: relative;
+			border-left: 5px solid #8d6e63;
+			border: 1px solid #e0d6c8;
+		}
+
+		.timeline-content::before {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #8d6e63;
+			top: 50%;
+			transform: translateY(-50%);
+			border: 3px solid #f9f3eb;
+			box-shadow: 0 0 0 3px #8d6e63;
+		}
+
+		.timeline-item:nth-child(odd) .timeline-content::before {
+			right: -42px;
+		}
+
+		.timeline-item:nth-child(even) .timeline-content::before {
+			left: -42px;
+		}
+
+		.timeline-year {
+			font-weight: bold;
+			color: #5d4037;
+			margin-bottom: 0.8rem;
+			font-size: 1.4rem;
+			font-family: 'Cinzel', serif;
+			position: relative;
+			display: inline-block;
+		}
+
+		.timeline-year::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #8d6e63;
+		}
+
+		.quote {
+			font-style: italic;
+			text-align: center;
+			max-width: 800px;
+			margin: 3rem auto;
+			padding: 3rem 2rem;
+			background-color: #fff;
+			border-radius: 2px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+			position: relative;
+			border-top: 5px solid #8d6e63;
+			border-bottom: 5px solid #8d6e63;
+			border-left: 1px solid #e0d6c8;
+			border-right: 1px solid #e0d6c8;
+		}
+
+		.quote:before,
+		.quote:after {
+			content: '"';
+			font-size: 4rem;
+			color: #8d6e63;
+			opacity: 0.3;
+			position: absolute;
+			line-height: 1;
+		}
+
+		.quote:before {
+			top: 20px;
+			left: 30px;
+		}
+
+		.quote:after {
+			bottom: 20px;
+			right: 30px;
+		}
+
+		.quote-text {
+			font-size: 1.5rem;
+			line-height: 1.6;
+			margin-bottom: 1.5rem;
+			position: relative;
+		}
+
+		.quote-author {
+			font-size: 1.2rem;
+			color: #5d4037;
+			font-style: normal;
+			position: relative;
+			display: inline-block;
+		}
+
+		.quote-author::before {
+			content: "—";
+			margin-right: 5px;
+		}
+
+		.seal {
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background: radial-gradient(circle, #8d6e63 0%, #5d4037 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #f9f3eb;
+			font-family: 'Cinzel', serif;
+			font-size: 0.8rem;
+			text-align: center;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border: 2px solid #f9f3eb;
+			transform: rotate(-15deg);
+			opacity: 0.9;
+			z-index: 5;
+		}
+
+		.seal-1 {
+			top: 50px;
+			right: 50px;
+		}
+
+		.seal-2 {
+			bottom: 100px;
+			left: 50px;
+		}
+
+		footer {
+			background-color: #2c1810;
+			color: #f9f3eb;
+			text-align: center;
+			padding: 3rem 0;
+			margin-top: 4rem;
+			border-top: 8px solid #8d6e63;
+			position: relative;
+		}
+
+		.footer-content {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin: 1.5rem 0;
+		}
+
+		.footer-links a {
+			color: #d7ccc8;
+			text-decoration: none;
+			margin: 0 1rem;
+			transition: color 0.3s;
+			font-family: 'Cinzel', serif;
+			font-size: 1.1rem;
+		}
+
+		.footer-links a:hover {
+			color: #f9f3eb;
+		}
+
+		@media (max-width: 768px) {
+			.timeline:before {
+				left: 20px;
+			}
+
+			.timeline-item {
+				width: 100%;
+				left: 0 !important;
+				padding-left: 60px;
+				padding-right: 0;
+			}
+
+			.timeline-item:nth-child(odd) .timeline-content::before,
+			.timeline-item:nth-child(even) .timeline-content::before {
+				left: -42px;
+			}
+
+			h1 {
+				font-size: 2.5rem;
+			}
+
+			nav a {
+				padding: 0.5rem 1.2rem;
+				font-size: 1rem;
+			}
+
+			.seal {
+				display: none;
+			}
+		}
+
+		.interactive-element {
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+
+		.interactive-element:hover {
+			transform: scale(1.05);
+		}
+
+		.hidden-content {
+			display: none;
+			margin-top: 1rem;
+			padding: 1rem;
+			background: rgba(141, 110, 99, 0.1);
+			border-left: 3px solid #8d6e63;
+		}
+
+		.toggle-btn {
+			background: #8d6e63;
+			color: white;
+			border: none;
+			padding: 0.5rem 1rem;
+			cursor: pointer;
+			font-family: 'Cormorant Garamond', serif;
+			font-size: 1rem;
+			margin-top: 1rem;
+			transition: background 0.3s;
+		}
+
+		.toggle-btn:hover {
+			background: #5d4037;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="ink-blot"></div>
+	<div class="ink-blot"></div>
+	<div class="ink-blot"></div>
+
+	<header>
+		<div class="header-content">
+			<h1>Наталья Гончарова</h1>
+			<p class="subtitle">Муза и жена Александра Пушкина</p>
+			<p class="header-quote">"Гляделась ли ты в зеркало, и уверилась ли ты, что с твоим лицом ничего сравнить
+				нельзя на свете — а душу твою люблю я еще более твоего лица"</p>
+		</div>
+	</header>
+
+	<nav>
+		<div class="nav-container">
+			<a href="#biography">Биография</a>
+			<a href="#facts">Интересные факты</a>
+			<a href="#timeline">Хронология</a>
+			<a href="#legacy">Наследие</a>
+		</div>
+	</nav>
+
+	<div class="page">
+		<div class="container">
+			<section class="hero">
+				<div class="hero-text">
+					<h2>Прекрасная муза великого поэта</h2>
+					<p>Наталья Николаевна Гончарова (1812-1863) — одна из самых известных женщин в истории русской
+						культуры, жена великого русского поэта Александра Сергеевича Пушкина. Её красота и изящество
+						вдохновляли не только Пушкина, но и многих современников.</p>
+					<p>Несмотря на то, что её часто представляют лишь как красивую спутницу гения, Наталья Николаевна
+						была образованной, умной и сильной женщиной, пережившей трагическую гибель мужа и воспитавшей их
+						четверых детей.</p>
+					<p>Её жизнь была полна драматических событий, а образ до сих пор вдохновляет художников, писателей и
+						кинематографистов.</p>
+
+					<button class="toggle-btn" onclick="toggleContent('hidden-bio')">Узнать больше</button>
+					<div id="hidden-bio" class="hidden-content">
+						<p>Интересно, что Наталья Гончарова была на 13 лет моложе Пушкина. Когда они познакомились, ей
+							было всего 16 лет, а ему — 29. Несмотря на юный возраст, она уже тогда поражала
+							современников своей удивительной красотой и изяществом.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="biography">
+				<h2>Биография</h2>
+				<p class="section-intro">Жизнь Натальи Гончаровой была тесно переплетена с судьбой великого поэта, но и
+					сама по себе представляет интересную историю женщины XIX века</p>
+
+				<div class="facts-grid">
+					<div class="fact-card interactive-element">
+						<h3>Ранние годы</h3>
+						<p>Наталья Гончарова родилась 27 августа 1812 года в поместье Кариан Тамбовской губернии. Она
+							была шестым ребёнком в семье Николая Афанасьевича Гончарова и Натальи Ивановны, урождённой
+							Загряжской. Детство провела в имении Полотняный Завод, получила домашнее образование,
+							изучала иностранные языки, литературу и основы светского этикета.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Знакомство с Пушкиным</h3>
+						<p>В 1828 году на одном из московских балов 16-летнюю Наталью заметил Александр Пушкин. Поэт был
+							очарован её красотой и в 1830 году сделал предложение. Свадьба состоялась 18 февраля 1831
+							года в Москве в церкви Большого Вознесения у Никитских ворот. Молодожены поселились в
+							Санкт-Петербурге, где Наталья Николаевна быстро стала одной из первых красавиц столицы.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Семейная жизнь</h3>
+						<p>В браке у Пушкиных родилось четверо детей: Мария (1832), Александр (1833), Григорий (1835) и
+							Наталья (1836). Несмотря на счастливые моменты, семейная жизнь омрачалась финансовыми
+							трудностями и светскими сплетнями. Роковой стала история с французским кавалергардом Жоржем
+							Дантесом, ухаживавшим за Натальей Николаевной, что привело к дуэли и гибели Пушкина.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Жизнь после Пушкина</h3>
+						<p>После трагической гибели Пушкина в 1837 году, Наталья Николаевна переехала с детьми в имение
+							брата. В 1844 году она вышла замуж во второй раз — за генерала Петра Ланского, командира
+							Конного полка. В этом браке родились три дочери. Наталья Николаевна скончалась 26 ноября
+							1863 года от воспаления легких, похоронена на Лазаревском кладбище Александро-Невской лавры.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="facts">
+				<h2>Интересные факты</h2>
+				<p class="section-intro">Малоизвестные детали жизни Натальи Гончаровой, которые раскрывают её личность с
+					новой стороны</p>
+
+				<div class="facts-grid">
+					<div class="fact-card interactive-element">
+						<h3>Первая встреча</h3>
+						<p>Пушкин впервые увидел Наталью Гончарову на балу в Москве в декабре 1828 года, когда ей было
+							всего 16 лет. Поэт был поражён её красотой и сразу решил, что она станет его женой. В своих
+							письмах он называл её "чистейшей прелести чистейший образец".</p>
+
+						<button class="toggle-btn" onclick="toggleContent('hidden-meeting')">Интересная деталь</button>
+						<div id="hidden-meeting" class="hidden-content">
+							<p>Интересно, что на том самом балу, где Пушкин впервые увидел Наталью, она была в белом
+								платье с золотым поясом, что делало её похожей на античную статую. Этот образ навсегда
+								запечатлелся в памяти поэта.</p>
+						</div>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Сложности с женитьбой</h3>
+						<p>Мать Натальи сначала была против брака с Пушкиным, считая его неблагонадёжным и имеющим
+							сомнительную репутацию. Свадьба состоялась только через два года после помолвки, когда
+							Пушкин смог уладить финансовые вопросы и получить согласие семьи Гончаровых.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Роковая красота</h3>
+						<p>Красота Натальи Николаевны стала косвенной причиной дуэли Пушкина с Дантесом. Ухаживания
+							последнего за женой поэта и распространение сплетен привели к трагическому конфликту.
+							Современники отмечали, что её красота была "не от мира сего" и производила неизгладимое
+							впечатление.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Второй брак</h3>
+						<p>Через семь лет после гибели Пушкина Наталья Николаевна вышла замуж за генерала Петра
+							Ланского. Этот брак был счастливым, в нём родились три дочери. Ланской относился с уважением
+							к памяти Пушкина и заботился о его детях как о своих собственных.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Образ в искусстве</h3>
+						<p>Образ Натальи Гончаровой запечатлён на многих портретах, а также в литературе и кино. Самый
+							известный прижизненный портрет написал Александр Брюллов. Её образ вдохновлял не только
+							Пушкина, но и многих других художников и писателей.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Потомки</h3>
+						<p>Прямые потомки Пушкина и Гончаровой живут по всему миру. Среди них есть известные деятели
+							искусства, науки и общественные деятели. В настоящее время насчитывается более 200 прямых
+							потомков великого поэта и его супруги.</p>
+
+						<button class="toggle-btn" onclick="toggleContent('hidden-descendants')">Узнать о потомках</button>
+						<div id="hidden-descendants" class="hidden-content">
+							<p>Среди известных потомков Пушкина и Гончаровой — правнук поэта, Григорий Пушкин, который
+								был морским офицером и участником Цусимского сражения, и праправнучка Наталья
+								Воронцова-Вельяминова, известная художница.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="timeline">
+				<h2>Хронология жизни</h2>
+				<p class="section-intro">Основные вехи жизни Натальи Гончаровой в историческом контексте</p>
+
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1812</div>
+							<p>Рождение Натальи Гончаровой в поместье Кариан Тамбовской губернии 27 августа, в тот самый
+								год, когда Napoleon вторгся в Россию.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1828</div>
+							<p>Первая встреча с Александром Пушкиным на балу в Москве. Поэт был очарован 16-летней
+								красавицей и начал активно добиваться её расположения.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1831</div>
+							<p>Свадьба Александра Пушкина и Натальи Гончаровой в Москве 18 февраля. Молодожены
+								переезжают в Санкт-Петербург, где Наталья быстро становится звездой светского общества.
+							</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1837</div>
+							<p>Гибель Пушкина на дуэли с Дантесом. Наталье Николаевне было 24 года, она осталась вдовой
+								с четырьмя малолетними детьми на руках.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1844</div>
+							<p>Второй брак с генералом Петром Ланским. Брак был одобрен императором Николаем I, который
+								лично знал и уважал Наталью Николаевну.</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content interactive-element">
+							<div class="timeline-year">1863</div>
+							<p>Смерть Натальи Гончаровой в Санкт-Петербурге в возрасте 51 года. Похоронена на
+								Лазаревском кладбище Александро-Невской лавры.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div class="quote interactive-element">
+				<p class="quote-text">Я женат — и счастлив; одно желание моё, чтоб ничего в жизни моей не изменилось —
+					лучшего не дождусь. Это состояние для меня так ново, что, кажется, я переродился.</p>
+				<p class="quote-author">Александр Пушкин о браке с Натальей Гончаровой</p>
+			</div>
+
+			<section id="legacy">
+				<h2>Наследие</h2>
+				<p class="section-intro">Вклад Натальи Гончаровой в русскую культуру и память о ней</p>
+
+				<div class="facts-grid">
+					<div class="fact-card interactive-element">
+						<h3>Образ в литературе</h3>
+						<p>Наталья Гончарова стала прообразом многих женских образов в русской литературе. Её
+							трагическая судьба и необыкновенная красота вдохновляли не только Пушкина, но и многих
+							других писателей. В XX веке её образ получил новое осмысление в произведениях Юрия Тынянова,
+							Анны Ахматовой и других авторов.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Кинематограф</h3>
+						<p>Образ Натальи Гончаровой многократно воплощался на киноэкране. Наиболее известные экранные
+							воплощения принадлежат актрисам Галине Беляевой ("На вершине славы"), Елене Кореневой
+							("Последняя дорога") и другим. Каждая актриса привносила своё понимание этой сложной
+							исторической фигуры.</p>
+					</div>
+					<div class="fact-card interactive-element">
+						<h3>Музеи и память</h3>
+						<p>Память о Наталье Гончаровой сохраняется в музеях-квартирах Пушкина в Санкт-Петербурге и
+							Москве, в музее-заповеднике "Полотняный Завод" — родовом имении Гончаровых. Её личные вещи,
+							письма и портреты являются ценными экспонатами, позволяющими лучше понять эпоху и личность
+							этой remarkable женщины.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="seal seal-1">ПЕЧАТЬ<br>РОДА<br>ГОНЧАРОВЫХ</div>
+			<div class="seal seal-2">1812<br>—<br>1863</div>
+			</div>
+
+			<footer>
+				<div class="footer-content">
+					<div class="footer-links">
+						<a href="#biography">Биография</a>
+						<a href="#facts">Факты</a>
+						<a href="#timeline">Хронология</a>
+						<a href="#legacy">Наследие</a>
+					</div>
+				</div>
+			</footer>
+
+			<script>
+				function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+        
+        // Добавляем интерактивность элементам при наведении
+        document.querySelectorAll('.interactive-element').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Анимация появления элементов при прокрутке
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.fact-card, .timeline-content');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (position < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Инициализация анимации при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fact-card, .timeline-content');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Запускаем анимацию после небольшой задержки
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 100);
+        });
+			</script>
+</body>
+
+</html>
