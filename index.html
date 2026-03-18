@@ -2,13 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Василий Аксёнов • Крым и гуси</title>
-    <!-- Google Fonts & Font Awesome -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>Адам Мицкевич и Крым | Исследовательская работа</title>
     <style>
         * {
             margin: 0;
@@ -16,448 +11,434 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --deep-blue: #1a3e60;
-            --sea-light: #d4eaf7;
-            --sand: #f5e9d8;
-            --paper: #faf9f7;
-            --text-dark: #2c3e4f;
-            --accent-gold: #b68b5c;
-            --goose-orange: #e07c3c; /* для гусей */
-            --shadow-sm: 0 4px 12px rgba(0,20,30,0.08);
-            --shadow-hover: 0 12px 24px rgba(26,62,96,0.12);
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--sea-light);
-            color: var(--text-dark);
+            font-family: 'Inter', 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background-color: #fafafa;
+            color: #1e1e2a;
             line-height: 1.6;
-            scroll-behavior: smooth;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            background-color: var(--paper);
-            box-shadow: var(--shadow-sm);
-            border-radius: 2rem 2rem 1rem 1rem;
-        }
-
-        /* типографика */
-        h1, h2, h3 {
-            font-family: 'Lora', serif;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        .document {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 8px rgba(0, 0, 0, 0.03);
+            border-radius: 4px;
+            padding: 40px 45px;
+            border: 1px solid #e2e2e9;
         }
 
         h1 {
-            font-size: 2.8rem;
-            color: var(--deep-blue);
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #121212;
             margin-bottom: 0.25rem;
-            line-height: 1.2;
+            border-bottom: 2px solid #cfd8dc;
+            padding-bottom: 18px;
+        }
+
+        .author-line {
+            font-size: 1rem;
+            color: #5a5c6b;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #eaeef2;
+            padding-bottom: 10px;
+        }
+
+        .author-name {
+            background: #f0f3f7;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 450;
+            font-size: 0.95rem;
+            color: #1e3f5c;
+        }
+
+        .date {
+            color: #5e6f7d;
         }
 
         h2 {
-            font-size: 2rem;
-            border-left: 6px solid var(--accent-gold);
-            padding-left: 1.2rem;
-            margin: 2.5rem 0 1.5rem 0;
-            color: var(--deep-blue);
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin: 40px 0 20px 0;
+            color: #1f3a4b;
+            border-left: 5px solid #9aaeb9;
+            padding-left: 20px;
         }
 
         h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: var(--deep-blue);
-        }
-
-        .subhead {
             font-size: 1.3rem;
-            font-weight: 300;
-            font-style: italic;
-            color: #5f6f7e;
-            border-bottom: 1px dashed var(--accent-gold);
-            padding-bottom: 0.5rem;
-            margin-top: -0.2rem;
+            font-weight: 500;
+            margin: 30px 0 15px 0;
+            color: #2f4a62;
         }
 
-        /* хедер с фоном */
-        .hero {
-            background: linear-gradient( rgba(26,62,96,0.7), rgba(26,62,96,0.5) ), url('https://images.unsplash.com/photo-1595665591332-978c9d12c2f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            background-color: var(--deep-blue);
-            min-height: 260px;
-            border-radius: 2rem 2rem 1rem 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2.5rem 2rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            box-shadow: inset 0 -20px 30px -10px rgba(0,0,0,0.3);
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
         }
 
-        .hero h1 {
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            font-size: clamp(2rem, 8vw, 3.5rem);
-        }
-
-        .hero .subhead {
-            color: rgba(255,255,255,0.9);
-            border-bottom-color: var(--sand);
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-        }
-
-        /* карточки для произведений и фактов */
-        .card-grid {
+        .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0 20px;
         }
 
-        .card {
-            background: white;
-            padding: 1.8rem 1.4rem;
-            border-radius: 1.8rem;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid rgba(182,139,92,0.15);
+        .work-item {
+            background: #f8fafc;
+            border: 1px solid #dde3e9;
+            border-radius: 8px;
+            padding: 22px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: 0.1s ease;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
+        .work-item:hover {
+            border-color: #8ba0af;
+            background: #ffffff;
+            box-shadow: 0 5px 12px rgba(28, 55, 74, 0.08);
         }
 
-        .card i {
-            color: var(--accent-gold);
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .fact-list {
-            list-style: none;
-        }
-
-        .fact-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            font-size: 1.1rem;
-            border-bottom: 1px dotted #d0dde5;
-            padding-bottom: 0.8rem;
-        }
-
-        .fact-list li i {
-            color: var(--accent-gold);
-            font-size: 1.4rem;
-            min-width: 2rem;
-            text-align: center;
-            padding-top: 0.2rem;
-        }
-
-        /* связь с крымом — текст с буквицей */
-        .crimea-text {
-            font-size: 1.2rem;
-            background: rgba(212,234,247,0.25);
-            padding: 2rem;
-            border-radius: 2rem;
-            margin: 1.5rem 0;
-            border-left: 10px solid var(--accent-gold);
-            font-family: 'Lora', serif;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
-        }
-
-        .crimea-text::first-letter {
-            font-size: 3.5rem;
-            float: left;
-            line-height: 0.8;
-            margin-right: 0.5rem;
-            color: var(--deep-blue);
+        .work-title {
             font-weight: 600;
+            font-size: 1.3rem;
+            color: #1b3b4f;
+            margin-bottom: 6px;
         }
 
-        /* компактная информация */
-        .info-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            background: var(--sea-light);
-            padding: 1.5rem;
-            border-radius: 2rem;
-            margin-top: 1rem;
-        }
-
-        .info-item {
-            flex: 1 1 200px;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 400;
-        }
-
-        .info-item i {
-            font-size: 1.8rem;
-            color: var(--deep-blue);
-        }
-
-        /* ГУСИНЫЙ БЛОК — мемы и пернатые */
-        .goose-block {
-            background: #fff4e6;
-            border: 3px dashed var(--goose-orange);
-            border-radius: 3rem 1rem 3rem 1rem;
-            padding: 2rem;
-            margin: 3rem 0 2rem;
-            box-shadow: 0 10px 20px rgba(224,124,60,0.15);
-        }
-
-        .goose-title {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 2rem;
-            font-family: 'Lora', serif;
-            color: #a35117;
-            margin-bottom: 1.5rem;
-        }
-
-        .goose-title i {
-            font-size: 2.8rem;
-            transform: rotate(5deg);
-        }
-
-        .goose-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.8rem;
-            justify-content: center;
-        }
-
-        .goose-meme {
-            flex: 1 1 200px;
-            background: white;
-            border-radius: 2rem 0.5rem 2rem 0.5rem;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            box-shadow: 0 8px 0 #b45f2b;
-            border: 1px solid #f5c6a0;
-            transition: all 0.2s;
-        }
-
-        .goose-meme:hover {
-            transform: scale(1.02) rotate(-1deg);
-            box-shadow: 0 8px 0 #b45f2b, 0 12px 20px rgba(0,0,0,0.1);
-        }
-
-        .goose-emoji {
-            font-size: 5rem;
-            line-height: 1;
-            filter: drop-shadow(2px 6px 3px rgba(0,0,0,0.2));
-        }
-
-        .goose-meme p {
-            margin-top: 0.8rem;
-            font-weight: 500;
-            color: #6b3e1c;
-        }
-
-        .goose-meme .goose-caption {
-            font-style: italic;
-            background: #ffe5d0;
-            padding: 0.4rem;
-            border-radius: 1rem;
+        .work-meta {
             font-size: 0.9rem;
+            color: #657e8d;
+            margin-bottom: 12px;
+            font-family: 'SF Mono', 'Courier New', monospace;
+            border-bottom: 1px dashed #cbd5de;
+            padding-bottom: 6px;
         }
 
-        /* футер — теперь только работа Кочевова Кирилла */
-        footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--sea-light);
-            font-size: 1rem;
-            color: #2c3e4f;
+        .work-description {
+            font-size: 0.98rem;
+            color: #2b3b44;
+        }
+
+        .quote-block {
+            background: #f2f5f7;
+            padding: 28px 32px;
+            margin: 35px 0;
+            border-radius: 2px;
+            border-left: 10px solid #8fadc2;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            box-shadow: inset 0 1px 4px #fbfeff, 0 6px 12px -18px #060a0e;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #1d2b36;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+
+        .quote-source {
+            text-align: right;
+            font-weight: 450;
+            color: #496c7c;
+            border-top: 1px dotted #c0cedb;
+            padding-top: 12px;
+            margin-top: 8px;
+        }
+
+        .inline-quote {
+            background: #f0f4f9;
+            padding: 12px 25px;
+            border-radius: 30px;
+            margin: 15px 0;
+            color: #1b3f54;
+            font-size: 1.05rem;
+            border: 1px solid #c8d6e2;
+        }
+
+        .poem-line {
+            font-style: italic;
+            font-family: 'Georgia', serif;
+            line-height: 1.9;
+            color: #2b3a4a;
+        }
+
+        .footnote {
+            background: #f8fbfe;
+            border-top: 1px solid #ccdbe8;
+            border-bottom: 1px solid #ccdbe8;
+            padding: 16px 25px;
+            margin: 40px 0;
+            font-size: 0.98rem;
+            color: #2e495b;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            gap: 10px 30px;
+        }
+
+        .footnote-item {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .footnote-item strong {
+            min-width: 110px;
+            font-weight: 600;
+            color: #1e3b4b;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #dbe4ec;
+            margin: 40px 0 20px;
+        }
+
+        .sources {
+            background: #f2f6fa;
+            padding: 20px 30px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            color: #315165;
+        }
+
+        .sources p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-student {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 2px solid #d0dde8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.8rem;
-            text-align: center;
+            color: #5a6b7a;
+            font-size: 0.95rem;
         }
 
-        .footer-author {
-            background: var(--sea-light);
-            padding: 0.7rem 2rem;
-            border-radius: 3rem;
+        .student-signature {
             font-weight: 500;
-            color: var(--deep-blue);
+            background: #eaf0f5;
+            padding: 5px 18px;
+            border-radius: 40px;
+            color: #1c4b66;
         }
 
-        .footer-author i {
-            color: var(--goose-orange);
-            margin: 0 0.3rem;
-        }
-
-        /* адаптивность */
         @media (max-width: 700px) {
-            .wrapper {
-                padding: 1rem 1.2rem;
+            .document {
+                padding: 25px 20px;
             }
             h1 {
                 font-size: 2rem;
             }
-            h2 {
+            .author-line {
+                flex-direction: column;
+                align-items: start;
+            }
+            .quote-block {
+                padding: 20px 18px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
                 font-size: 1.7rem;
             }
-            .hero {
-                min-height: 200px;
-                padding: 1.5rem;
-            }
-            .card-grid {
+            .works-grid {
                 grid-template-columns: 1fr;
             }
-            .goose-title {
-                font-size: 1.6rem;
-            }
         }
 
-        @media (max-width: 480px) {
-            .info-row {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            .goose-emoji {
-                font-size: 4rem;
-            }
-        }
-
-        /* кнопка наверх */
-        .top-link {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--deep-blue);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: var(--shadow-hover);
-            opacity: 0.7;
-            transition: opacity 0.2s;
-            z-index: 99;
-        }
-        .top-link:hover {
-            opacity: 1;
-        }
-        @media (max-width: 600px) {
-            .top-link {
-                bottom: 1rem;
-                right: 1rem;
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
-            }
+        .epigraph {
+            margin: 20px 0 30px;
+            padding: 15px 25px;
+            background: #edf3f8;
+            border-radius: 8px;
+            color: #2d4b63;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- герой с изображением Крыма -->
-        <div class="hero">
-            <h1>Василий Аксёнов</h1>
-            <div class="subhead">писатель, врач, голос поколения и его Крым</div>
+    <div class="document">
+        <!-- Шапка с информацией об авторе работы -->
+        <h1>Адам Мицкевич и Крым</h1>
+        <div class="author-line">
+            <span class="author-name">Работа ученика 9 класса Кочевова Кирилла</span>
+            <span class="date">Март 2026 · Симферополь</span>
         </div>
 
-        <!-- быстрые факты -->
-        <div class="info-row">
-            <div class="info-item"><i class="fas fa-calendar-alt"></i> 1932–2009</div>
-            <div class="info-item"><i class="fas fa-map-pin"></i> Казань → Москва → США</div>
-            <div class="info-item"><i class="fas fa-book-open"></i> «Остров Крым», «Ожог»</div>
-            <div class="info-item"><i class="fas fa-user-md"></i> врач по образованию</div>
+        <!-- Введение: эпиграф и основные факты -->
+        <div class="epigraph">
+            <p class="poem-line">«Кто хочет понять поэта, тот должен отправиться в его страну»<br>
+            <span style="font-size:0.9rem; color:#4f6b7a;">— И.В. Гёте. Эпиграф к «Крымским сонетам» [2]</span></p>
         </div>
 
-        <!-- биография / факты о писателе -->
-        <h2><i class="fas fa-feather-alt" style="margin-right: 10px; color: var(--accent-gold);"></i> О писателе</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Василий Павлович Аксёнов — прозаик, драматург, сценарист, одна из ключевых фигур «шестидесятников». Его дерзкая манера, джазовые ритмы прозы и неподдельная свобода сделали его голосом целого поколения. В 1980 году эмигрировал в США, но литературная связь с Россией и — особенно — с Крымом не прерывалась никогда.</p>
+        <section>
+            <h2>1. Крым в судьбе польского поэта</h2>
+            <p><strong>Адам Мицкевич (1798–1855)</strong> — великий польский поэт, драматург, деятель национально-освободительного движения. Его связь с Крымом стала результатом трагических обстоятельств: за участие в тайных патриотических обществах в 1823 году он был арестован, а в 1824 — выслан в Россию [2][9]. Летом 1825 года, находясь в Одессе, Мицкевич совершил двухмесячное путешествие по Крыму, которое коренным образом изменило его творчество [1][8].</p>
+            <p>Поэт посетил Гезлев (Евпаторию), Бахчисарай, Чуфут-Кале, Алушту, окрестности Чатырдага, Байдарскую долину и Аю-Даг [1]. В Евпатории он гостил у главы караимов Хаджи Аги Бабовича (ныне на доме установлена мемориальная доска) [1]. В Бахчисарае спал на диване последнего хана Шагин-Гирея [1]. Результатом поездки стал цикл из 18 сонетов, опубликованных в Москве в конце 1826 года и сразу переведённых на русский язык князем П.А. Вяземским [2][5][9].</p>
+        </section>
 
-        <!-- КРЫМСКАЯ СВЯЗЬ -->
-        <h2><i class="fas fa-umbrella-beach" style="margin-right: 10px; color: var(--accent-gold);"></i> Связь с Крымом</h2>
-        <div class="crimea-text">
-            Крым для Аксёнова — не просто география, а мифическая земля свободы. В детстве он слышал рассказы о Коктебеле, а в 1960-е впервые приехал в Коктебель, в Дом творчества писателей. Дружба с поэтами и художниками, долгие прогулки по Карадагу, морские этюды — всё это прорастало в его текстах. Самый яркий след — культовый роман «Остров Крым» (1981), где полуостров предстаёт цветущим независимым государством, не знавшим советской власти. Эту альтернативную вселенную Аксёнов вынашивал именно под шум прибоя в Коктебеле.
+        <!-- Крымские сонеты: состав и значение -->
+        <h2>2. «Крымские сонеты» (1826)</h2>
+        <p>Цикл состоит из 18 стихотворений, которые стали новым словом в европейской литературе, соединив романтическую традицию с восточной экзотикой и глубоким лиризмом [1][2]. Главный герой — странник-изгнанник, тоскующий по родине (Литве), но очарованный красотой чужого края [2].</p>
+        
+        <div class="works-grid">
+            <div class="work-item">
+                <div class="work-title">Аккерманские степи</div>
+                <div class="work-meta">I</div>
+                <div class="work-description">Вступление в крымский мир, образ безбрежной степи как моря, ожидание звука с родины.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Бахчисарай</div>
+                <div class="work-meta">VI–VIII</div>
+                <div class="work-description">Размышления о былом величии ханской столицы, гробница Потоцкой, могилы гарема.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Чатырдаг</div>
+                <div class="work-meta">XIII</div>
+                <div class="work-description">Образ горы как «минарета Аллы», вечного стража, внемлющего лишь Творцу.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Алушта днём и ночью</div>
+                <div class="work-meta">XI–XII</div>
+                <div class="work-description">Контрастные пейзажи южного берега, буйство красок днём и таинственная нега ночи.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Пилигрим</div>
+                <div class="work-meta">XIV</div>
+                <div class="work-description">Тоска по родине, сравнение крымской природы с литовской.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Дорога над пропастью в Чуфут-Кале</div>
+                <div class="work-meta">XVI</div>
+                <div class="work-description">Опасный путь по горной тропе, доверие Аллаху.</div>
+            </div>
+            <div class="work-item">
+                <div class="work-title">Аю-Даг</div>
+                <div class="work-meta">XVIII</div>
+                <div class="work-description">Заключительный сонет, размышления о поэтическом творчестве, подобном морскому прибою [6].</div>
+            </div>
         </div>
 
-        <!-- что написал в крыму -->
-        <h2><i class="fas fa-pen-fancy" style="margin-right: 10px; color: var(--accent-gold);"></i> Что написал в Крыму (и о нём)</h2>
-        <div class="card-grid">
-            <div class="card">
-                <i class="fas fa-globe-europe"></i>
-                <h3>«Остров Крым»</h3>
-                <p style="font-weight: 500; color: var(--accent-gold);">1981, роман-антиутопия</p>
-                <p>Главная крымская книга Аксёнова. Написанная уже в США, но целиком посвящённая полуострову — каким он мог бы стать. Отголоски крымских пейзажей, яхты, Гурзуф, Ялта — узнаваемы до дрожи.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-leaf"></i>
-                <h3>«Крымские рассказы»</h3>
-                <p style="font-weight: 500; color: var(--accent-gold);">1968, сборник</p>
-                <p>Цикл коротких историй, навеянных летними сезонами в Коктебеле и Старом Крыму. Впервые опубликован в журнале «Юность»; позже вошли в том «Апельсины из Марокко».</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-dove"></i>
-                <h3>«Стальная птица»</h3>
-                <p style="font-weight: 500; color: var(--accent-gold);">1965, повесть</p>
-                <p>Написана в Коктебеле за один «ударный» месяц. Действие разворачивается в вымышленном посёлке, но современники сразу узнали крымские мотивы и атмосферу «хрущёвской оттепели» у моря.</p>
-            </div>
+        <!-- Цитаты из сонетов -->
+        <h2>3. Фрагменты из «Крымских сонетов»</h2>
+
+        <div class="quote-block">
+            <div class="quote-text">«Скачу, как бешеный, на бешеном коне;<br>
+            Долины, скалы, лес мелькают предо мною,<br>
+            Сменяясь, как волна в потоке за волною…<br>
+            Тем вихрем образов упиться — любо мне!»</div>
+            <div class="quote-source">— из сонета (перевод А. Мицкевича) [1]</div>
         </div>
 
-        <!-- факты + дополнительная крымская конкретика -->
-        <h2><i class="fas fa-star" style="margin-right: 10px; color: var(--accent-gold);"></i> Факты: Крым и жизнь Аксёнова</h2>
-        <ul class="fact-list">
-            <li><i class="fas fa-house-user"></i> В 1966 году Аксёнов жил в Коктебеле в доме Волошина (флигель) и работал над повестью «Затоваренная бочкотара» — её герои тоже «выглядывают» на крымское побережье.</li>
-            <li><i class="fas fa-ship"></i> Будучи заядлым яхтсменом, Аксёнов не раз выходил в море из Балаклавы и Феодосии. Эти впечатления легли в описание регат в «Ожоге» и «Острове Крым».</li>
-            <li><i class="fas fa-film"></i> По сценарию Аксёнова «Мой старший брат» (1961) снимали фильм, но эпизоды с крымскими видами вошли только в режиссёрскую версию.</li>
-            <li><i class="fas fa-scroll"></i> В последнем интервью (2008) Аксёнов признался: «Если бы не Крым, я бы, наверное, не написал и половины своих книг. Там воздух другой — он заставляет врать и выдумывать красиво».</li>
-            <li><i class="fas fa-tree"></i> В поселке Коктебель на доме, где останавливался писатель, в 2015 году установлена мемориальная доска (инициатива местного музея Марины и Анастасии Цветаевых).</li>
-        </ul>
+        <div class="quote-block">
+            <div class="quote-text">Выходим на простор степного океана.<br>
+            Воз тонет в зелени, как челн в равнине вод,<br>
+            Меж заводей цветов, в волнах травы плывет,<br>
+            Минуя острова багряного бурьяна.<br>
+            <br>
+            Темнеет. Впереди — ни шляха, ни кургана.<br>
+            Жду путеводных звезд, гляжу на небосвод…<br>
+            Вон блещет облако, а в нем звезда встает:<br>
+            То за стальным Днестром маяк у Аккермана.</div>
+            <div class="quote-source">— «Аккерманские степи» (пер. И.А. Бунина, 1901) [3]</div>
+        </div>
 
-        <!-- ГУСИНЫЙ УГОЛОК: мемы и смешные гуси (добавлено по просьбе) -->
+        <div class="inline-quote">
+            <span class="poem-line">«Склоняюсь с трепетом к стопам твоей твердыни,<br>Великий Чатырдаг, могучий хан Яйлы.<br>О мачта крымских гор! О минарет Аллы!<br>До туч вознесся ты в лазурные пустыни…»</span><br>
+            — «Чатырдаг» (пер. И.А. Бунина) [3]
+        </div>
 
+        <div class="quote-block">
+            <div class="quote-text">Повеял ветерок, прохладою лаская.<br>
+            Светильник мира пал с небес на Чатырдаг,<br>
+            Разбился, расточил багрянец на скалах,<br>
+            И гаснет. Тьма растет, молчанием пугая.<br>
+            <br>
+            Чернеют гребни гор, в долинах ночь глухая,<br>
+            Как будто в полусне журчат ручьи впотьмах;<br>
+            Ночная песнь цветов — дыханье роз в садах —<br>
+            Беззвучной музыкой плывет, благоухая.</div>
+            <div class="quote-source">— «Алушта ночью» (пер. И.А. Бунина) [3]</div>
+        </div>
 
-        <!-- подвал ТОЛЬКО с именем автора (источники удалены) -->
-        <footer>
-            <div class="footer-author">
-                <i class="fas fa-pencil-alt"></i> Работа Кочевова Кирилла <i class="fas fa-goose"></i> • 2025
-            </div>
-            <div style="font-size: 0.9rem; width:100%;">
-                Сайт создан с любовью к литературе и гусям 🪿
-            </div>
-        </footer>
+        <div class="quote-block">
+            <div class="quote-text">О, мысли, в ваших недрах змей<br>
+            Воспоминаний, там снующий тихо.<br>
+            Пока судьба к вам зла, он просто спит,<br>
+            Но жалит сразу, когда стихнет лихо.</div>
+            <div class="quote-source">— «Аю-Даг» (перевод с польского) [6]</div>
+        </div>
+
+        <!-- Биографические факты -->
+        <h2>4. Биографические вехи</h2>
+        <div class="footnote">
+            <div class="footnote-item"><strong>1798–1819:</strong> Родился в Заосье близ Новогрудка (ныне Беларусь). Окончил Виленский университет [5][8].</div>
+            <div class="footnote-item"><strong>1823–1824:</strong> Арест по делу филоматов, заключение в Вильне, высылка в Россию [4][9].</div>
+            <div class="footnote-item"><strong>1825:</strong> Путешествие по Крыму (июль–сентябрь) [5][9].</div>
+            <div class="footnote-item"><strong>1826–1828:</strong> Жизнь в Москве и Петербурге, дружба с Пушкиным, Вяземским, декабристами [9].</div>
+            <div class="footnote-item"><strong>1829–1855:</strong> Эмиграция (Германия, Италия, Швейцария, Франция). Профессор славянских литератур в Коллеж де Франс (1840–1844) [8].</div>
+            <div class="footnote-item"><strong>1855:</strong> Смерть в Константинополе (Стамбуле) во время формирования польских войск для участия в Крымской войне [4][8].</div>
+        </div>
+
+        <!-- Другие важные произведения -->
+        <h2>5. Главные творения</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
+            <span style="background:#edf2f7; padding:8px 18px; border-radius:30px;">«Дзяды» (1823–1832) — романтическая драма</span>
+            <span style="background:#edf2f7; padding:8px 18px; border-radius:30px;">«Конрад Валленрод» (1828) — поэма</span>
+            <span style="background:#edf2f7; padding:8px 18px; border-radius:30px;">«Книги польского народа и польского пилигримства» (1832)</span>
+            <span style="background:#edf2f7; padding:8px 18px; border-radius:30px;">«Пан Тадеуш» (1834) — национальная эпопея [8]</span>
+        </div>
+
+        <!-- Значение и память -->
+        <h2>6. Значение для Крыма и мировой культуры</h2>
+        <p>«Крымские сонеты» стали уникальным явлением: ссыльный поэт создал гимн красоте полуострова, который вдохновляет читателей уже два столетия. В Евпатории, Симферополе, Ялте, Гурзуфе и других городах установлены памятники и мемориальные доски Мицкевичу [1]. Его творчество повлияло на русскую литературу (Пушкин, Лермонтов, Бунин) и на формирование романтизма в славянских литературах [5][9].</p>
+        <p>Поэта упрекали в излишней «татарщине», но Мицкевич отвечал: «Сентиментальные дамы осудили меня за слишком земные чувства, салоны — за выражения в стиле горничных, учёные-классики — за татарщину, языковеды — за ошибки» [2].</p>
+
+        <!-- Источники -->
+        <h2>7. Источники и литература</h2>
+        <div class="sources">
+            <p>[1] Крымский республиканский музей. Адам Мицкевич: рождение «Крымских сонетов». — krbm.ru, 2023.</p>
+            <p>[2] Википедия. Крымские сонеты. — ru.wikipedia.org, 2023.</p>
+            <p>[3] Викитека. Из «Крымских сонетов» (перевод И.А. Бунина). — ru.wikisource.org.</p>
+            <p>[4] Деятели культуры: Адам Мицкевич. — jlntv.cn, 2025.</p>
+            <p>[5] Русский музей. Портрет Адама Мицкевича. — rusmuseumvrm.ru.</p>
+            <p>[6] Адам Мицкевич. Крымские сонеты. Переводы. — Яндекс Книги, 2021.</p>
+            <p>[7] Польская литература онлайн. Чатырдаг. — polskayaliteratura.pl, 2022.</p>
+            <p>[8] Encyclopaedia Britannica. Adam Mickiewicz. — britannica.com, 2025.</p>
+            <p>[9] Фундаментальная электронная библиотека. Мицкевич. — feb-web.ru.</p>
+        </div>
+
+        <!-- Футер с указанием ученика -->
+        <div class="footer-student">
+            <span class="student-signature">Работа 9 класса Кочевова Кирилла</span>
+            <span>Март 2026 г. · Симферополь</span>
+        </div>
+
+        <p style="font-size:0.8rem; color:#90a3b3; margin-top:20px; text-align:right;">Сайт разработан в рамках проектной деятельности · адаптивная вёрстка</p>
     </div>
-
-    <!-- кнопка "наверх" -->
-    <a href="#" class="top-link" title="Наверх"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- скрипт для плавного скролла -->
-    <script>
-        (function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } else if (this.getAttribute('href') === '#') {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                });
-            });
-        })();
-    </script>
 </body>
-    </html>
+</html>
