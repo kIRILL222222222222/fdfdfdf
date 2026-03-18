@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Василий Аксёнов • Крым на страницах</title>
+    <title>Василий Аксёнов • Крым и гуси</title>
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
             --paper: #faf9f7;
             --text-dark: #2c3e4f;
             --accent-gold: #b68b5c;
+            --goose-orange: #e07c3c; /* для гусей */
             --shadow-sm: 0 4px 12px rgba(0,20,30,0.08);
             --shadow-hover: 0 12px 24px rgba(26,62,96,0.12);
         }
@@ -85,7 +86,7 @@
         /* хедер с фоном */
         .hero {
             background: linear-gradient( rgba(26,62,96,0.7), rgba(26,62,96,0.5) ), url('https://images.unsplash.com/photo-1595665591332-978c9d12c2f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            background-color: var(--deep-blue); /* fallback */
+            background-color: var(--deep-blue);
             min-height: 260px;
             border-radius: 2rem 2rem 1rem 1rem;
             display: flex;
@@ -204,28 +205,100 @@
             color: var(--deep-blue);
         }
 
-        /* футер */
+        /* ГУСИНЫЙ БЛОК — мемы и пернатые */
+        .goose-block {
+            background: #fff4e6;
+            border: 3px dashed var(--goose-orange);
+            border-radius: 3rem 1rem 3rem 1rem;
+            padding: 2rem;
+            margin: 3rem 0 2rem;
+            box-shadow: 0 10px 20px rgba(224,124,60,0.15);
+        }
+
+        .goose-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 2rem;
+            font-family: 'Lora', serif;
+            color: #a35117;
+            margin-bottom: 1.5rem;
+        }
+
+        .goose-title i {
+            font-size: 2.8rem;
+            transform: rotate(5deg);
+        }
+
+        .goose-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+
+        .goose-meme {
+            flex: 1 1 200px;
+            background: white;
+            border-radius: 2rem 0.5rem 2rem 0.5rem;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 8px 0 #b45f2b;
+            border: 1px solid #f5c6a0;
+            transition: all 0.2s;
+        }
+
+        .goose-meme:hover {
+            transform: scale(1.02) rotate(-1deg);
+            box-shadow: 0 8px 0 #b45f2b, 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .goose-emoji {
+            font-size: 5rem;
+            line-height: 1;
+            filter: drop-shadow(2px 6px 3px rgba(0,0,0,0.2));
+        }
+
+        .goose-meme p {
+            margin-top: 0.8rem;
+            font-weight: 500;
+            color: #6b3e1c;
+        }
+
+        .goose-meme .goose-caption {
+            font-style: italic;
+            background: #ffe5d0;
+            padding: 0.4rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* футер — теперь только работа Кочевова Кирилла */
         footer {
             margin-top: 3rem;
             padding-top: 1.5rem;
             border-top: 2px solid var(--sea-light);
-            font-size: 0.9rem;
-            color: #5e7a8f;
+            font-size: 1rem;
+            color: #2c3e4f;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 0.8rem;
+            text-align: center;
         }
 
-        .footer-links a {
-            color: var(--deep-blue);
-            text-decoration: none;
-            margin-left: 1.5rem;
+        .footer-author {
+            background: var(--sea-light);
+            padding: 0.7rem 2rem;
+            border-radius: 3rem;
             font-weight: 500;
+            color: var(--deep-blue);
         }
 
-        .footer-links a:hover {
-            color: var(--accent-gold);
+        .footer-author i {
+            color: var(--goose-orange);
+            margin: 0 0.3rem;
         }
 
         /* адаптивность */
@@ -246,20 +319,8 @@
             .card-grid {
                 grid-template-columns: 1fr;
             }
-            .fact-list li {
-                font-size: 1rem;
-            }
-            .crimea-text {
-                padding: 1.2rem;
-                font-size: 1.1rem;
-            }
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            .footer-links a {
-                margin: 0 0.8rem;
+            .goose-title {
+                font-size: 1.6rem;
             }
         }
 
@@ -268,12 +329,12 @@
                 flex-direction: column;
                 gap: 0.8rem;
             }
-            .hero {
-                border-radius: 1.5rem 1.5rem 1rem 1rem;
+            .goose-emoji {
+                font-size: 4rem;
             }
         }
 
-        /* кнопка наверх (для удобства на телефоне) */
+        /* кнопка наверх */
         .top-link {
             position: fixed;
             bottom: 2rem;
@@ -314,10 +375,10 @@
             <div class="subhead">писатель, врач, голос поколения и его Крым</div>
         </div>
 
-        <!-- быстрые факты / иконки -->
+        <!-- быстрые факты -->
         <div class="info-row">
             <div class="info-item"><i class="fas fa-calendar-alt"></i> 1932–2009</div>
-            <div class="info-item"><i class="fas fa-map-pin"></i> Казань &nbsp;→ Москва &nbsp;→ США</div>
+            <div class="info-item"><i class="fas fa-map-pin"></i> Казань → Москва → США</div>
             <div class="info-item"><i class="fas fa-book-open"></i> «Остров Крым», «Ожог»</div>
             <div class="info-item"><i class="fas fa-user-md"></i> врач по образованию</div>
         </div>
@@ -326,13 +387,13 @@
         <h2><i class="fas fa-feather-alt" style="margin-right: 10px; color: var(--accent-gold);"></i> О писателе</h2>
         <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Василий Павлович Аксёнов — прозаик, драматург, сценарист, одна из ключевых фигур «шестидесятников». Его дерзкая манера, джазовые ритмы прозы и неподдельная свобода сделали его голосом целого поколения. В 1980 году эмигрировал в США, но литературная связь с Россией и — особенно — с Крымом не прерывалась никогда.</p>
 
-        <!-- КРЫМСКАЯ СВЯЗЬ (основной блок) -->
+        <!-- КРЫМСКАЯ СВЯЗЬ -->
         <h2><i class="fas fa-umbrella-beach" style="margin-right: 10px; color: var(--accent-gold);"></i> Связь с Крымом</h2>
         <div class="crimea-text">
             Крым для Аксёнова — не просто география, а мифическая земля свободы. В детстве он слышал рассказы о Коктебеле, а в 1960-е впервые приехал в Коктебель, в Дом творчества писателей. Дружба с поэтами и художниками, долгие прогулки по Карадагу, морские этюды — всё это прорастало в его текстах. Самый яркий след — культовый роман «Остров Крым» (1981), где полуостров предстаёт цветущим независимым государством, не знавшим советской власти. Эту альтернативную вселенную Аксёнов вынашивал именно под шум прибоя в Коктебеле.
         </div>
 
-        <!-- что написал в крыму / карточки произведений -->
+        <!-- что написал в крыму -->
         <h2><i class="fas fa-pen-fancy" style="margin-right: 10px; color: var(--accent-gold);"></i> Что написал в Крыму (и о нём)</h2>
         <div class="card-grid">
             <div class="card">
@@ -365,31 +426,55 @@
             <li><i class="fas fa-tree"></i> В поселке Коктебель на доме, где останавливался писатель, в 2015 году установлена мемориальная доска (инициатива местного музея Марины и Анастасии Цветаевых).</li>
         </ul>
 
-        <!-- интерактивная деталь: дополнительная цитата -->
-        <div style="background: var(--sea-light); padding: 1.5rem; border-radius: 2rem; margin: 2rem 0; text-align: center; font-style: italic;">
-            <i class="fas fa-quote-left" style="color: var(--accent-gold); font-size: 2rem; opacity: 0.5; margin-right: 0.5rem;"></i>
-            Крым — это такой полуостров, где реальность всегда чуть-чуть фантастичнее вымысла. Я лишь записывал.
-            <div style="margin-top: 0.5rem; font-weight: 500;">— В. Аксёнов, из эссе «Море рядом» (1987)</div>
+        <!-- ГУСИНЫЙ УГОЛОК: мемы и смешные гуси (добавлено по просьбе) -->
+        <div class="goose-block">
+            <div class="goose-title">
+                <i class="fas fa-duck" style="color: var(--goose-orange);"></i>  Гусиный след в литературе  <i class="fas fa-feather" style="color: var(--goose-orange);"></i>
+            </div>
+            <div class="goose-grid">
+                <div class="goose-meme">
+                    <div class="goose-emoji">🪿</div>
+                    <p><strong>Гусь-шестидесятник</strong></p>
+                    <p class="goose-caption">«Аксёнов однажды подрался с гусем в Коктебеле. Гусь выиграл раунд, но проиграл в литературе»</p>
+                </div>
+                <div class="goose-meme">
+                    <div class="goose-emoji">🦆</div>
+                    <p><strong>Утка-блогер</strong> (выдаёт себя за гуся)</p>
+                    <p class="goose-caption">«Остров Крым? Я там плавал! Кря!»</p>
+                </div>
+                <div class="goose-meme">
+                    <div class="goose-emoji">🪿🪿</div>
+                    <p><strong>Два гуся Аксёнова</strong></p>
+                    <p class="goose-caption">Один говорит: «Га-га-га, прочитай „Ожог“». Второй: «Сам читай, я уже в Коктебель улетаю».</p>
+                </div>
+                <div class="goose-meme">
+                    <div class="goose-emoji">🐓</div>
+                    <p><strong>Петух-самозванец</strong></p>
+                    <p class="goose-caption">«Тоже хочу быть гусем! Ко-ко-ко-крым!»</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.7;">
+                <i class="fas fa-quote-left"></i> Гуси — это вам не шутка, они серьёзно вдохновляли писателя. (Нет, но могли бы)
+            </p>
         </div>
 
-        <!-- подвал / источники и ссылки -->
+        <!-- подвал ТОЛЬКО с именем автора (источники удалены) -->
         <footer>
-            <div>© 2025 · Неофициальный сайт о Василии Аксёнове · <i class="fas fa-heart" style="color: #b68b5c;"></i> Крым вдохновляет</div>
-            <div class="footer-links">
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#">Источники</a>
+            <div class="footer-author">
+                <i class="fas fa-pencil-alt"></i> Работа Кочевова Кирилла <i class="fas fa-goose"></i> • 2025
+            </div>
+            <div style="font-size: 0.9rem; width:100%;">
+                Сайт создан с любовью к литературе и гусям 🪿
             </div>
         </footer>
     </div>
 
-    <!-- кнопка "наверх" для удобства на телефоне/ПК -->
+    <!-- кнопка "наверх" -->
     <a href="#" class="top-link" title="Наверх"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- небольшой скрипт для плавного скролла (опционально) -->
+    <!-- скрипт для плавного скролла -->
     <script>
         (function() {
-            // плавный скролл для якорей (если есть)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -404,4 +489,4 @@
         })();
     </script>
 </body>
-        </html>
+    </html>
